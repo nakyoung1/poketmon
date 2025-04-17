@@ -3,22 +3,14 @@
      padding: 0;
      box-sizing: border-box;
 }
-
 .wrapper {
-     margin: 0 auto;
-     width: 100vw;
-     border: 1px solid red;
-     padding: 10px;
+     background-image: none;
 }
 
-header {
-     border: 1px solid green;
-     padding: 10px;
-     margin: 10px;
+.wrapper.theme-light {
+     background-color: #eee;
 }
-
-.card {
-     border: 1px solid blue;
-     padding: 10px;
-     margin: 10px;
+.wrapper.theme-dark {
+     background-color: #0e1621;
+     background-image: none;
 }

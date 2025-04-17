@@ -1,0 +1,106 @@
+#confetti {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+     z-index: 999;
+}
+
+header {
+     width: 100vw;
+     height: auto;
+     background-image: url("../assets/header_back.png");
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+     align-items: center;
+     padding: 20px;
+}
+
+.utility {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+}
+
+header button {
+     background: none;
+     border: none;
+     padding: 0;
+     margin: 0;
+     font: inherit;
+     color: inherit;
+     cursor: pointer;
+     font-size: 13px;
+}
+header button:hover {
+     text-decoration: underline;
+     text-decoration-color: #000000;
+}
+.toggle-btn {
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     border: none;
+     cursor: pointer;
+     position: relative;
+     font-size: 20px;
+     text-align: center;
+     padding: 5px;
+}
+.toggle-btn:hover {
+     border: 1px solid rgba(164, 164, 164, 0.4);
+}
+
+.toggle-btn.light {
+     background-color: #fcd34d; /* 노란색 (해 느낌) */
+}
+
+.toggle-btn.dark {
+     background-color: #1e293b; /* 짙은 네이비 (달 느낌) */
+     color: white;
+}
+
+.title_img {
+     width: 70%;
+     padding: 30px;
+     transition: transform 0.3s ease-in-out;
+     cursor: pointer;
+}
+@keyframes sparkle {
+     0%,
+     100% {
+          filter: brightness(1);
+     }
+     50% {
+          filter: brightness(1.1);
+     }
+}
+
+.title_img:hover {
+     transform: scale(1.3);
+     animation: sparkle 1.2s infinite;
+}
+@media screen and (min-width: 600px) {
+     header {
+          height: 300px;
+          background-size: 150%;
+     }
+     .title_img {
+          width: 50%;
+     }
+}
+@media screen and (min-width: 900px) {
+     header {
+          height: 500px;
+          background-size: cover;
+     }
+     .title_img {
+          width: 40%;
+     }
+}

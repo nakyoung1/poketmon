@@ -1,26 +1,41 @@
 import React from "react";
 import "./App.css";
+import Header from "./Components/Header";
+import Search from "./Components/Search";
+import CardList from "./Components/CardList";
+import { PokeContextProvider } from "./Context/poke_context";
+import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
+import { useContext } from "react";
+import {
+     ThemeToggleBtnContext,
+     ThemeToggleBtnProvider,
+} from "./Context/ThemeToggleBtn";
+
+function Main({ children }) {
+     const { isDark } = useContext(ThemeToggleBtnContext);
+     return (
+          <div className={`wrapper theme-${isDark}`}>
+               <main>
+                    {children}
+                    <CardList />
+               </main>
+          </div>
+     );
+}
 
 function App() {
      return (
-          <div className="wrapper">
-               <header>
-                    <div>
-                         <button>lan</button>
-                         <button>drak</button>
-                    </div>
-                    <h1>포켓몬도감</h1>
-                    <div>
-                         <input type="text" />
-                         <button>검색</button>
-                    </div>
-               </header>
-               <main>
-                    <div>
-                         <div className="card"></div>
-                    </div>
-               </main>
-          </div>
+          <PokeContextProvider>
+               <LangToggleBtnProvider>
+                    <ThemeToggleBtnProvider>
+                         <Header />
+                         <Main>
+                              {" "}
+                              <Search />
+                         </Main>
+                    </ThemeToggleBtnProvider>
+               </LangToggleBtnProvider>
+          </PokeContextProvider>
      );
 }
 

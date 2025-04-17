@@ -1,0 +1,147 @@
+.card_container {
+     margin: 0 auto;
+     width: 95vw;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 10px;
+}
+@media screen and (min-width: 600px) {
+     .card_container {
+          grid-template-columns: repeat(5, 1fr);
+     }
+}
+@media screen and (min-width: 1024px) {
+     .card_container {
+          grid-template-columns: repeat(7, 1fr);
+     }
+}
+@media screen and (min-width: 1400px) {
+     .card_container {
+          grid-template-columns: repeat(10, 1fr);
+     }
+}
+.card {
+     border-radius: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 10px;
+     padding: 10px;
+     height: auto;
+     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+     transform: scale(1.1);
+}
+.card.card-light {
+     background-color: rgb(255, 255, 255);
+}
+
+.card.card-dark {
+     background-color: #1e293b; /* 짙은 남색 */
+     color: white;
+}
+
+.card img {
+     width: 100px;
+     height: 100px;
+     object-fit: contain; /* or 'cover' */
+     display: block;
+     margin: 0 auto;
+     z-index: 999;
+}
+.type_container {
+     font-size: 13px;
+     display: flex;
+     gap: 5px;
+}
+
+.poke_type {
+     position: relative;
+     display: inline-block;
+     width: 25px;
+     height: 25px;
+     margin-right: 6px;
+     background-size: cover;
+     background-position: center;
+     cursor: pointer;
+}
+/* 타입 이름 (기본 숨김) */
+.poke_type .type-label {
+     position: absolute;
+     bottom: -24px;
+     left: 50%;
+     transform: translateX(-50%);
+     background-color: rgba(0, 0, 0, 0.75);
+     color: white;
+     font-size: 11px;
+     padding: 3px 6px;
+     border-radius: 6px;
+     white-space: nowrap;
+     opacity: 0;
+     transition: opacity 0.2s;
+     pointer-events: none;
+}
+
+/* hover 시 이름 보이기 */
+.poke_type:hover .type-label {
+     opacity: 1;
+}
+
+.normal {
+     background-image: url("../assets/types/normal.png");
+}
+.fire {
+     background-image: url("../assets/types/fire.png");
+}
+.water {
+     background-image: url("../assets/types/water.png");
+}
+.grass {
+     background-image: url("../assets/types/water.png");
+}
+.electric {
+     background-image: url("../assets/types/electric.png");
+}
+.ice {
+     background-image: url("../assets/types/ice.png");
+}
+.fighting {
+     background-image: url("../assets/types/fighting.png");
+}
+.poison {
+     background-image: url("../assets/types/poison.png");
+}
+.ground {
+     background-image: url("../assets/types/ground.png");
+}
+.flying {
+     background-image: url("../assets/types/flying.png");
+}
+.psychic {
+     background-image: url("../assets/types/psychic.png");
+}
+.bug {
+     background-image: url("../assets/types/bug.png");
+}
+.rock {
+     background-image: url("../assets/types/rock.png");
+}
+.ghost {
+     background-image: url("../assets/types/ghost.png");
+}
+.dragon {
+     background-image: url("../assets/types/dragon.png");
+}
+.dark {
+     background-image: url("../assets/types/dark.png");
+}
+.steel {
+     background-image: url("../assets/types/steel.png");
+}
+.fairy {
+     background-image: url("../assets/types/fairy.png");
+}
