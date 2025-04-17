@@ -1,0 +1,24 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.wrapper {
+     margin: 0 auto;
+     width: 100vw;
+     border: 1px solid red;
+     padding: 10px;
+}
+
+header {
+     border: 1px solid green;
+     padding: 10px;
+     margin: 10px;
+}
+
+.card {
+     border: 1px solid blue;
+     padding: 10px;
+     margin: 10px;
+}
