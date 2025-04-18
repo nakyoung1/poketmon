@@ -1,5 +1,6 @@
 import logo from "../assets/header_logo.png";
 import "../styles/Header.css";
+import Search from "../Components/Search";
 
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import { useContext } from "react";
@@ -28,6 +29,7 @@ function Header() {
                     />
                </div>
                <img className="title_img" src={logo} />
+               <Search />
           </header>
      );
 }

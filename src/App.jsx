@@ -37,7 +37,7 @@ function App() {
                               <AbilityProvider>
                                    <Header />
                                    <Main>
-                                        <Search />
+                                        {/* <Search /> */}
                                         <PokemonDialog />
                                    </Main>
 

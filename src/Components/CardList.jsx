@@ -18,7 +18,7 @@ function CardList() {
 
      return (
           <div className="card_container">
-               {isLoading && <Loading />}
+               {/* {isLoading && <Loading />} */}
                {state.filtered.map((item, index) => (
                     <Card
                          key={index}

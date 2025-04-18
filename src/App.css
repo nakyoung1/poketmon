@@ -5,6 +5,7 @@
 }
 .wrapper {
      background-image: none;
+     padding-top: 20px;
 }
 
 .wrapper.theme-light {
