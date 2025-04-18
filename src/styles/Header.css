@@ -1,13 +1,3 @@
-#confetti {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     pointer-events: none;
-     z-index: 999;
-}
-
 header {
      width: 100vw;
      height: auto;
@@ -28,20 +18,29 @@ header {
      justify-content: space-between;
 }
 
-header button {
-     background: none;
-     border: none;
-     padding: 0;
-     margin: 0;
-     font: inherit;
-     color: inherit;
+.lang-toggle {
+     background-color: #ffcb05; /* 포켓몬 노랑 */
+     border: 2px solid #3d7dca; /* 포켓몬 파랑 */
+     color: rgb(31, 60, 132); /* 진파랑 텍스트 */
+     font-weight: bold;
+     padding: 8px 16px;
+     border-radius: 9999px;
+     font-size: 14px;
      cursor: pointer;
-     font-size: 13px;
+     box-shadow: 0 4px 8px rgba(58, 110, 180, 0.3);
+     transition: all 0.2s ease-in-out;
 }
-header button:hover {
-     text-decoration: underline;
-     text-decoration-color: #000000;
+
+.lang-toggle:hover {
+     background-color: #ffe44d; /* 밝은 노랑 */
+     transform: translateY(-1px);
 }
+
+.lang-toggle:active {
+     transform: scale(0.96);
+     box-shadow: 0 2px 4px rgba(42, 117, 187, 0.4);
+}
+
 .toggle-btn {
      width: 30px;
      height: 30px;

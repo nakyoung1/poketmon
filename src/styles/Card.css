@@ -45,6 +45,10 @@
      color: white;
 }
 
+.poke_id {
+     font-size: 10px;
+}
+
 .card img {
      width: 100px;
      height: 100px;

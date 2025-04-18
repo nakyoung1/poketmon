@@ -3,8 +3,13 @@ import "./App.css";
 import Header from "./Components/Header";
 import Search from "./Components/Search";
 import CardList from "./Components/CardList";
+import PokemonDialog from "./Components/PokemonDialog";
+import AbilityModal from "./Components/AbilityModal";
+
 import { PokeContextProvider } from "./Context/poke_context";
 import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
+import { AbilityProvider } from "./Context/ability_context";
+
 import { useContext } from "react";
 import {
      ThemeToggleBtnContext,
@@ -25,17 +30,23 @@ function Main({ children }) {
 
 function App() {
      return (
-          <PokeContextProvider>
-               <LangToggleBtnProvider>
-                    <ThemeToggleBtnProvider>
-                         <Header />
-                         <Main>
-                              {" "}
-                              <Search />
-                         </Main>
-                    </ThemeToggleBtnProvider>
-               </LangToggleBtnProvider>
-          </PokeContextProvider>
+          <>
+               <PokeContextProvider>
+                    <LangToggleBtnProvider>
+                         <ThemeToggleBtnProvider>
+                              <AbilityProvider>
+                                   <Header />
+                                   <Main>
+                                        <Search />
+                                        <PokemonDialog />
+                                   </Main>
+
+                                   <AbilityModal />
+                              </AbilityProvider>
+                         </ThemeToggleBtnProvider>
+                    </LangToggleBtnProvider>
+               </PokeContextProvider>
+          </>
      );
 }
 
