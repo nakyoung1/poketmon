@@ -5,8 +5,9 @@
      align-items: center;
      gap: 10px;
      padding: 12px 20px;
-     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
      flex-wrap: wrap;
+     margin-top: 20px;
+     z-index: 30;
 }
 
 .search-left,
@@ -25,7 +26,8 @@
      width: 180px;
 }
 
-.search-center button {
+.searchBtn {
+     min-width: 70px;
      padding: 8px 12px;
      font-size: 14px;
      border-radius: 6px;
@@ -35,26 +37,44 @@
      cursor: pointer;
      transition: all 0.2s ease-in-out;
 }
-
+.search-center {
+     margin-left: 50px;
+}
 .search-center button:hover {
      background-color: #e6f0ff;
 }
 
 /* 전체보기 텍스트 */
 .search-left .all {
+     background: linear-gradient(
+          145deg,
+          #ffcc01,
+          #ffdf70
+     ); /* 포켓몬스러운 노랑 */
+     color: #2a75bb;
      font-weight: bold;
      cursor: pointer;
-     font-size: 16px;
-     color: #333;
+     font-size: 14px;
+     border-radius: 25px;
+     padding: 10px 16px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+     border: 2px solid #f4b400;
+     transition: all 0.2s ease-in-out;
 }
 
 .search-left .all:hover {
-     color: #2a75bb;
-     text-decoration: underline;
+     background: linear-gradient(145deg, #ffe670, #ffd000);
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+     transform: translateY(-2px);
+}
+
+.search-left .all:active {
+     transform: scale(0.98);
+     box-shadow: none;
 }
 
 /* 반응형 대응 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 630px) {
      .search-bar {
           flex-direction: column;
           align-items: stretch;
@@ -108,4 +128,21 @@
      height: 100%;
      pointer-events: none;
      z-index: 9999; /* 👈 무조건 모달보다 위로! */
+}
+
+.burst-container {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     pointer-events: none;
+     z-index: 9999;
+}
+
+.burst-circle {
+     position: absolute;
+     width: 10px;
+     height: 10px;
+     background: #ffe066;
+     border-radius: 50%;
+     transform: translate(-50%, -50%);
 }

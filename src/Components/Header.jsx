@@ -14,7 +14,7 @@ function Header() {
      const { isDark, handleThemeToggle } = useContext(ThemeToggleBtnContext);
 
      return (
-          <header>
+          <header className={`${isDark === "dark" ? "darkMode" : ""}`}>
                <div className="utility">
                     <button className="lang-toggle" onClick={handleLangClick}>
                          {lang === "kor" ? "English" : "한국어"}

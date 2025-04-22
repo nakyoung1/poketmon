@@ -2,6 +2,7 @@ import { useContext, useRef, useEffect } from "react";
 import { PokeContext } from "../Context/poke_context";
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import { TYPE_NAME_KR, STAT_NAME_KR } from "../data/Translation";
+import { ThemeToggleBtnContext } from "../Context/ThemeToggleBtn";
 
 import "../styles/modal.css";
 import Loading from "./Loading";
@@ -9,7 +10,7 @@ import Loading from "./Loading";
 function PokemonDialog() {
      const { isLoading, isModalOpen, setIsModalOpen, selectedPokemon } =
           useContext(PokeContext);
-
+     const { isDark } = useContext(ThemeToggleBtnContext);
      const { lang } = useContext(LangToggleBtnContext);
      const dialogRef = useRef();
 
@@ -27,7 +28,7 @@ function PokemonDialog() {
           <dialog
                ref={dialogRef}
                onClick={() => setIsModalOpen(false)}
-               className="pokemon-dialog"
+               className={`pokemon-dialog ${isDark === "dark" ? "dark" : ""}`}
           >
                {isLoading && <Loading />}
                <h2>

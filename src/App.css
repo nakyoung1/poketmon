@@ -9,11 +9,13 @@
 }
 
 .wrapper.theme-light {
-     height: 100vh;
+     min-height: 100vh;
+     height: auto;
      background-color: #eee;
 }
 .wrapper.theme-dark {
-     height: 100vh;
+     min-height: 100vh;
+     height: auto;
      background-color: #0e1621;
      background-image: none;
 }

@@ -1,10 +1,8 @@
 import React from "react";
 import "./App.css";
 import Header from "./Components/Header";
-import Search from "./Components/Search";
 import CardList from "./Components/CardList";
 import PokemonDialog from "./Components/PokemonDialog";
-import AbilityModal from "./Components/AbilityModal";
 
 import { PokeContextProvider } from "./Context/poke_context";
 import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
@@ -36,12 +34,8 @@ function App() {
                          <ThemeToggleBtnProvider>
                               <AbilityProvider>
                                    <Header />
-                                   <Main>
-                                        {/* <Search /> */}
-                                        <PokemonDialog />
-                                   </Main>
-
-                                   <AbilityModal />
+                                   <Main />
+                                   <PokemonDialog />
                               </AbilityProvider>
                          </ThemeToggleBtnProvider>
                     </LangToggleBtnProvider>

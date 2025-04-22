@@ -1,13 +1,15 @@
 import "../styles/Search.css";
 import { useContext, useRef } from "react";
 import { PokeContext } from "../Context/poke_context";
+import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import confetti from "canvas-confetti";
 
 function Search() {
      const { dispatch, setIsModalOpen, state, setSelectedPokemon } =
           useContext(PokeContext);
+     const { lang } = useContext(LangToggleBtnContext);
      const inputRef = useRef(null);
-
+     const btnRef = useRef(null);
      function handleReset() {
           dispatch({ type: "RESET" });
      }
@@ -15,6 +17,7 @@ function Search() {
      function handleSearch() {
           const keyword = inputRef.current.value;
           dispatch({ type: "SEARCH", payload: keyword });
+          inputRef.current.value = "";
      }
 
      function handleKeyUp(e) {
@@ -28,34 +31,42 @@ function Search() {
           const poke = state.all[randomIndex];
           confetti({
                particleCount: 100,
-               spread: 70,
+               spread: 80,
                origin: { y: 0.6 },
           });
           setSelectedPokemon(poke);
-          setIsModalOpen(true);
+          setTimeout(() => {
+               setIsModalOpen(true);
+          }, 800);
      };
 
      return (
           <div className="search-bar">
                <div className="search-left">
                     <p className="all" onClick={handleReset}>
-                         전체보기
+                         {lang === "kor"
+                              ? "전체 포켓몬 보기"
+                              : "View all Pokémon"}
                     </p>
                </div>
 
                <div className="search-center">
-                    <input
-                         type="text"
-                         placeholder="이름을 검색해주세요"
-                         ref={inputRef}
-                         onKeyUp={handleKeyUp}
-                    />
-                    <button onClick={handleSearch}>검색</button>
+                    <input type="text" ref={inputRef} onKeyUp={handleKeyUp} />
+
+                    <button className="searchBtn" onClick={handleSearch}>
+                         {lang === "kor" ? "검색" : "Search"}
+                    </button>
                </div>
 
                <div className="search-right">
-                    <button className="random-btn" onClick={handleRandom}>
-                         🎁 오늘의 포켓몬
+                    <button
+                         ref={btnRef}
+                         className="random-btn"
+                         onClick={handleRandom}
+                    >
+                         {lang === "kor"
+                              ? "🎁 오늘의 포켓몬"
+                              : "🎁 Random Pokemon"}
                     </button>
                </div>
           </div>

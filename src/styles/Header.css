@@ -1,4 +1,7 @@
 header {
+     position: relative;
+     z-index: 1;
+     overflow: hidden;
      width: 100vw;
      height: auto;
      background-image: url("../assets/header_back.png");
@@ -8,14 +11,33 @@ header {
      display: flex;
      flex-direction: column;
      justify-content: start;
+
      align-items: center;
      padding: 20px;
+}
+
+header::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: transparent; /* 기본은 투명 */
+     transition: background-color 0.3s ease;
+     z-index: 2;
+     pointer-events: none;
+}
+
+header.darkMode::after {
+     background-color: rgba(0, 0, 0, 0.5); /* 어두운 오버레이 */
 }
 
 .utility {
      width: 100%;
      display: flex;
      justify-content: space-between;
+     z-index: 29;
 }
 
 .lang-toggle {
@@ -51,6 +73,7 @@ header {
      font-size: 20px;
      text-align: center;
      padding: 5px;
+     z-index: 30;
 }
 .toggle-btn:hover {
      border: 1px solid rgba(164, 164, 164, 0.4);
@@ -70,6 +93,7 @@ header {
      padding: 30px;
      transition: transform 0.3s ease-in-out;
      cursor: pointer;
+     z-index: 30;
 }
 @keyframes sparkle {
      0%,
@@ -85,9 +109,9 @@ header {
      transform: scale(1.3);
      animation: sparkle 1.2s infinite;
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 630px) {
      header {
-          height: 300px;
+          height: 400px;
           background-size: 150%;
      }
      .title_img {
@@ -98,6 +122,17 @@ header {
      header {
           height: 500px;
           background-size: cover;
+          gap: 50px;
+     }
+     .title_img {
+          width: 40%;
+     }
+}
+@media screen and (min-width: 1400px) {
+     header {
+          height: 600px;
+          background-size: cover;
+          gap: 50px;
      }
      .title_img {
           width: 40%;
