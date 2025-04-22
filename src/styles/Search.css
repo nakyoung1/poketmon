@@ -37,9 +37,7 @@
      cursor: pointer;
      transition: all 0.2s ease-in-out;
 }
-.search-center {
-     margin-left: 50px;
-}
+
 .search-center button:hover {
      background-color: #e6f0ff;
 }

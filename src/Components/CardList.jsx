@@ -7,7 +7,7 @@ import noResult from "../assets/no_result.gif";
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 
 function CardList() {
-     const { isLoading, state, setSelectedPokemon, setIsModalOpen } =
+     const { dispatch, isLoading, state, setSelectedPokemon, setIsModalOpen } =
           useContext(PokeContext);
      const { lang } = useContext(LangToggleBtnContext);
 
@@ -31,23 +31,38 @@ function CardList() {
           );
      } else {
           return (
-               <div className="card_container">
-                    {state.filtered.map((item, index) => (
-                         <Card
-                              key={index}
-                              id={item.id}
-                              name={
-                                   lang === "kor" ? item.nameKor : item.nameEng
-                              }
-                              image={item.image}
-                              types={item.types}
-                              handleCardClick={() => {
-                                   setSelectedPokemon(item);
-                                   setIsModalOpen(true);
-                              }}
-                         />
-                    ))}
-               </div>
+               <>
+                    <div className="card_container">
+                         {state.filtered.map((item, index) => (
+                              <Card
+                                   key={index}
+                                   id={item.id}
+                                   name={
+                                        lang === "kor"
+                                             ? item.nameKor
+                                             : item.nameEng
+                                   }
+                                   image={item.image}
+                                   types={item.types}
+                                   handleCardClick={() => {
+                                        setSelectedPokemon(item);
+                                        setIsModalOpen(true);
+                                   }}
+                              />
+                         ))}
+                    </div>
+                    {state.filtered === state.displayed &&
+                         state.displayed.length < state.all.length && (
+                              <button
+                                   className="load-more-btn"
+                                   onClick={() =>
+                                        dispatch({ type: "LOAD_MORE" })
+                                   }
+                              >
+                                   🔽 더 보기
+                              </button>
+                         )}
+               </>
           );
      }
 }

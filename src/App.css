@@ -9,12 +9,14 @@
 }
 
 .wrapper.theme-light {
-     min-height: 100vh;
+     min-height: 55vh;
+     padding-bottom: 30px;
      height: auto;
      background-color: #eee;
 }
 .wrapper.theme-dark {
-     min-height: 100vh;
+     min-height: 55vh;
+     padding-bottom: 30px;
      height: auto;
      background-color: #0e1621;
      background-image: none;
