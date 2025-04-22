@@ -18,6 +18,7 @@
     "canvas-confetti": "^1.9.3",
     "lottie-react": "^2.4.1",
     "mo-js": "^0.288.2",
+    "node-fetch": "^3.3.2",
     "party-js": "^2.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
