@@ -7,7 +7,6 @@ import TopButton from "./Components/TobBtn";
 
 import { PokeContextProvider } from "./Context/poke_context";
 import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
-import { AbilityProvider } from "./Context/ability_context";
 
 import { useContext } from "react";
 import {
@@ -33,12 +32,10 @@ function App() {
                <PokeContextProvider>
                     <LangToggleBtnProvider>
                          <ThemeToggleBtnProvider>
-                              <AbilityProvider>
-                                   <Header />
-                                   <Main />
-                                   <TopButton />
-                                   <PokemonDialog />
-                              </AbilityProvider>
+                              <Header />
+                              <Main />
+                              <TopButton />
+                              <PokemonDialog />
                          </ThemeToggleBtnProvider>
                     </LangToggleBtnProvider>
                </PokeContextProvider>
