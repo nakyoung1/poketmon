@@ -51,7 +51,7 @@ function CardList() {
                               />
                          ))}
                     </div>
-                    {state.filtered === state.displayed &&
+                    {state.filtered.length === state.displayed.length &&
                          state.displayed.length < state.all.length && (
                               <button
                                    className="load-more-btn"

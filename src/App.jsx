@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import CardList from "./Components/CardList";
 import PokemonDialog from "./Components/PokemonDialog";
+import TopButton from "./Components/TobBtn";
 
 import { PokeContextProvider } from "./Context/poke_context";
 import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
@@ -35,6 +36,7 @@ function App() {
                               <AbilityProvider>
                                    <Header />
                                    <Main />
+                                   <TopButton />
                                    <PokemonDialog />
                               </AbilityProvider>
                          </ThemeToggleBtnProvider>

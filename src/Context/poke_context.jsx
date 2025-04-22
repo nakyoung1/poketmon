@@ -33,13 +33,22 @@ function pokeReducer(state, action) {
                };
           }
           case "SEARCH": {
-               const keyword = action.payload.toLowerCase();
-               const filtered = state.all.filter(
-                    (p) =>
-                         p.nameEng.toLowerCase().includes(keyword) ||
-                         p.nameKor.includes(keyword) ||
-                         String(p.id) === keyword
-               );
+               const keyword = action.payload.trim();
+               const isNumeric = /^\d+$/.test(keyword); // 숫자인지 확인
+
+               const filtered = state.all.filter((p) => {
+                    if (isNumeric) {
+                         return String(p.id) === keyword;
+                    } else {
+                         return (
+                              p.nameEng
+                                   .toLowerCase()
+                                   .includes(keyword.toLowerCase()) ||
+                              p.nameKor.includes(keyword)
+                         );
+                    }
+               });
+
                return { ...state, filtered };
           }
           case "RESET": {
