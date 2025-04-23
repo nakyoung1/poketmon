@@ -3,19 +3,12 @@ import { PokeContext } from "../Context/poke_context";
 import Card from "./Card";
 import Loading from "./Loading";
 import noResult from "../assets/no_result.gif";
-
+import { Link } from "react-router-dom";
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 
 function CardList() {
-     const { dispatch, isLoading, state, setSelectedPokemon, setIsModalOpen } =
-          useContext(PokeContext);
+     const { dispatch, isLoading, state } = useContext(PokeContext);
      const { lang } = useContext(LangToggleBtnContext);
-
-     const handleCardClick = (id) => {
-          const poke = state.all.find((p) => p.id === id);
-          setSelectedPokemon(poke);
-          setIsModalOpen(true);
-     };
 
      if (isLoading) {
           return <Loading />;
@@ -34,21 +27,19 @@ function CardList() {
                <>
                     <div className="card_container">
                          {state.filtered.map((item, index) => (
-                              <Card
-                                   key={index}
-                                   id={item.id}
-                                   name={
-                                        lang === "kor"
-                                             ? item.nameKor
-                                             : item.nameEng
-                                   }
-                                   image={item.image}
-                                   types={item.types}
-                                   handleCardClick={() => {
-                                        setSelectedPokemon(item);
-                                        setIsModalOpen(true);
-                                   }}
-                              />
+                              <Link key={item.id} to={`/detail/${item.id}`}>
+                                   <Card
+                                        key={index}
+                                        id={item.id}
+                                        name={
+                                             lang === "kor"
+                                                  ? item.nameKor
+                                                  : item.nameEng
+                                        }
+                                        image={item.image}
+                                        types={item.types}
+                                   />
+                              </Link>
                          ))}
                     </div>
                     {state.filtered.length === state.displayed.length &&

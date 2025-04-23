@@ -2,11 +2,11 @@ import "../styles/Card.css";
 import { useContext } from "react";
 import { ThemeToggleBtnContext } from "../Context/ThemeToggleBtn";
 
-function Card({ id, name, image, types, handleCardClick }) {
+function Card({ id, name, image, types }) {
      const { isDark } = useContext(ThemeToggleBtnContext);
 
      return (
-          <div className={`card card-${isDark}`} onClick={handleCardClick}>
+          <div className={`card card-${isDark}`}>
                <p className="poke_id">No.{id}</p>
                <p>{name}</p>
                <img src={image} />

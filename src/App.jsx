@@ -13,6 +13,7 @@ import {
      ThemeToggleBtnContext,
      ThemeToggleBtnProvider,
 } from "./Context/ThemeToggleBtn";
+import Detail from "./Components/Detail";
 
 function Main({ children }) {
      const { isDark } = useContext(ThemeToggleBtnContext);
@@ -35,6 +36,7 @@ function App() {
                               <Header />
                               <Main />
                               <TopButton />
+                              <Detail />
                               <PokemonDialog />
                          </ThemeToggleBtnProvider>
                     </LangToggleBtnProvider>

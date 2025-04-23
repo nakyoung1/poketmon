@@ -5,8 +5,14 @@ import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import confetti from "canvas-confetti";
 
 function Search() {
-     const { dispatch, setIsModalOpen, state, setSelectedPokemon } =
-          useContext(PokeContext);
+     const {
+          dispatch,
+          setIsModalOpen,
+          state,
+          setSelectedPokemon,
+          searchWithAutoFetch,
+     } = useContext(PokeContext);
+
      const { lang } = useContext(LangToggleBtnContext);
      const inputRef = useRef(null);
      const btnRef = useRef(null);
@@ -14,15 +20,15 @@ function Search() {
           dispatch({ type: "RESET" });
      }
 
-     function handleSearch() {
-          const keyword = inputRef.current.value;
-          dispatch({ type: "SEARCH", payload: keyword });
+     const handleSearch = (e) => {
+          e.preventDefault();
+          searchWithAutoFetch(inputRef.current.value);
           inputRef.current.value = "";
-     }
+     };
 
      function handleKeyUp(e) {
           if (e.key === "Enter") {
-               handleSearch();
+               handleSearch(e);
           }
      }
 

@@ -1,0 +1,103 @@
+/* DetailPage.css - 리디자인된 포켓몬 상세 페이지 스타일
+
+.pokemon-detail {
+     max-width: 900px;
+     margin: 2rem auto;
+     padding: 2rem;
+     background-color: #fff;
+     border-radius: 20px;
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+     transition: all 0.3s ease;
+     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+     color: #333;
+}
+
+.pokemon-detail.dark {
+     background-color: #222;
+     color: #eee;
+     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+.pokemon-detail h2 {
+     font-size: 2rem;
+     margin-bottom: 1rem;
+     text-align: center;
+}
+
+.pokemon-detail img {
+     display: block;
+     margin: 0 auto;
+     max-width: 300px;
+     height: auto;
+     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.pokemon-detail p {
+     font-size: 1.1rem;
+     margin: 0.5rem 0;
+     line-height: 1.6;
+}
+
+.stat-list {
+     margin-top: 1.5rem;
+     padding: 1rem;
+     border-top: 1px solid #ccc;
+}
+
+.stat-bar {
+     display: flex;
+     align-items: center;
+     margin-bottom: 0.75rem;
+     gap: 1rem;
+}
+
+.stat-label {
+     min-width: 100px;
+     font-weight: bold;
+     text-transform: capitalize;
+}
+
+.bar-bg {
+     flex: 1;
+     background: #eee;
+     height: 12px;
+     border-radius: 8px;
+     overflow: hidden;
+}
+
+.bar-fill {
+     height: 100%;
+     background: linear-gradient(90deg, #facc15, #f97316);
+     border-radius: 8px 0 0 8px;
+}
+
+.stat-value {
+     min-width: 40px;
+     text-align: right;
+     font-weight: 600;
+}
+
+button {
+     display: block;
+     margin: 2rem auto 0;
+     padding: 0.75rem 1.5rem;
+     background-color: #2563eb;
+     color: white;
+     font-size: 1rem;
+     border: none;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: background-color 0.2s ease;
+}
+
+button:hover {
+     background-color: #1e40af;
+}
+
+button.dark {
+     background-color: #475569;
+}
+
+button.dark:hover {
+     background-color: #334155;
+} */
