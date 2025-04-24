@@ -182,7 +182,6 @@ function Comment({ pokemonId }) {
                                                                  {lang === "kor"
                                                                       ? "취소"
                                                                       : "Cancel"}
-                                                                 취소
                                                             </button>
                                                        </div>
                                                   </>
