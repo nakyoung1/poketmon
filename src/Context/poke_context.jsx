@@ -98,22 +98,6 @@ export function PokeContextProvider({ children }) {
           }
      };
 
-     // const fetchInitialPokemon = async () => {
-     //      try {
-     //           const promises = Array.from({ length: 1025 }, (_, i) =>
-     //                getPokemonData(i + 1)
-     //           );
-     //           const result = await Promise.all(promises);
-     //           dispatch({
-     //                type: "APPEND_POKEMON",
-     //                payload: result.filter(Boolean),
-     //           });
-     //           setIsLoading(false);
-     //      } catch (error) {
-     //           console.error("전체 포켓몬 로딩 실패", error);
-     //      }
-     // };
-
      const fetchAllPokemon = async () => {
           try {
                const promises = Array.from({ length: 1025 }, (_, i) =>
@@ -131,11 +115,6 @@ export function PokeContextProvider({ children }) {
      };
 
      const searchWithAutoFetch = async (keyword) => {
-          if (state.all.length < 1025) {
-               setIsLoading(true);
-               await fetchAllPokemon();
-               setIsLoading(false);
-          }
           dispatch({ type: "SEARCH", payload: keyword });
      };
 
