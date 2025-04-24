@@ -6,7 +6,10 @@
 .signup-all.darkMode {
      background-color: #0e1621;
 }
-
+.signup-all .title_img {
+     width: 300px;
+     margin-bottom: 30px;
+}
 .signup-container {
      display: flex;
      flex-direction: column;

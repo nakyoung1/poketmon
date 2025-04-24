@@ -6,7 +6,10 @@
 .login-all.darkMode {
      background-color: #0e1621;
 }
-
+.login-all .title_img {
+     width: 300px;
+     margin-bottom: 30px;
+}
 .login-container {
      display: flex;
      flex-direction: column;
