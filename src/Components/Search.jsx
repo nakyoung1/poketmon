@@ -56,7 +56,14 @@ function Search() {
                </div>
 
                <div className="search-center">
-                    <input type="text" ref={inputRef} onKeyUp={handleKeyUp} />
+                    <input
+                         type="text"
+                         ref={inputRef}
+                         onKeyUp={handleKeyUp}
+                         placeholder={
+                              lang === "kor" ? "아이디,이름" : "Id,name"
+                         }
+                    />
 
                     <button className="searchBtn" onClick={handleSearch}>
                          {lang === "kor" ? "검색" : "Search"}
