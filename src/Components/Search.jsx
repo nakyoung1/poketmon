@@ -61,7 +61,9 @@ function Search() {
                          ref={inputRef}
                          onKeyUp={handleKeyUp}
                          placeholder={
-                              lang === "kor" ? "아이디,이름" : "Id,name"
+                              lang === "kor"
+                                   ? "포켓몬 이름 혹은 번호를 입력해주세요."
+                                   : "Please enter a Pokémon name or ID number."
                          }
                     />
 
