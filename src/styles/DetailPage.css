@@ -1,53 +1,103 @@
-/* DetailPage.css - 리디자인된 포켓몬 상세 페이지 스타일
-
-.pokemon-detail {
-     max-width: 900px;
-     margin: 2rem auto;
-     padding: 2rem;
-     background-color: #fff;
-     border-radius: 20px;
-     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-     transition: all 0.3s ease;
-     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.detail-page {
+     width: 100%;
+     min-height: 100vh;
+     background-color: #fffbe6; /* 연노랑 배경 */
      color: #333;
+     padding-bottom: 4rem;
 }
 
-.pokemon-detail.dark {
-     background-color: #222;
-     color: #eee;
-     box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+.detail-page.darkmode {
+     background-color: #1f1f1f;
+     color: #f3f3f3;
+}
+.pokemon-detail {
+     position: relative;
+     max-width: 700px;
+     margin: 0 auto;
+     padding: 3rem 2rem;
+     background-color: #ffffff;
+     border-radius: 2rem;
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+     transition: all 0.3s ease;
+     font-family: "Arial Rounded MT", "Segoe UI", sans-serif;
+     margin-top: 30px;
+}
+
+.backBtn {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     padding: 0.7rem 1.3rem;
+     background-color: #ef5350;
+     color: white;
+     font-size: 0.95rem;
+     font-weight: bold;
+     border: none;
+     border-radius: 1rem;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+     z-index: 10;
+}
+
+.backBtn:hover {
+     background-color: #d32f2f;
+}
+
+.detail-page.darkmode .backBtn {
+     background-color: #475569;
+}
+
+.detail-page.darkmode .backBtn:hover {
+     background-color: #334155;
+}
+
+.detail-page.darkmode .pokemon-detail {
+     background-color: #2b2b2b;
 }
 
 .pokemon-detail h2 {
-     font-size: 2rem;
+     font-size: 2.5rem;
      margin-bottom: 1rem;
      text-align: center;
+     color: #ef5350;
+     letter-spacing: 1px;
 }
 
 .pokemon-detail img {
      display: block;
-     margin: 0 auto;
-     max-width: 300px;
+     margin: 1rem auto;
+     max-width: 250px;
      height: auto;
-     filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.2));
+     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+     transition: transform 0.3s ease;
+}
+.pokemon-detail img:hover {
+     transform: scale(1.05);
 }
 
 .pokemon-detail p {
      font-size: 1.1rem;
-     margin: 0.5rem 0;
+     margin: 0.6rem 0;
      line-height: 1.6;
+     text-align: center;
+     color: #555;
+}
+
+.detail-page.darkmode .pokemon-detail p {
+     color: #ddd;
 }
 
 .stat-list {
-     margin-top: 1.5rem;
-     padding: 1rem;
-     border-top: 1px solid #ccc;
+     margin-top: 2rem;
+     padding-top: 1rem;
+     border-top: 2px dashed #ccc;
 }
 
 .stat-bar {
      display: flex;
      align-items: center;
-     margin-bottom: 0.75rem;
+     margin-bottom: 1rem;
      gap: 1rem;
 }
 
@@ -55,49 +105,34 @@
      min-width: 100px;
      font-weight: bold;
      text-transform: capitalize;
+     color: #333;
+}
+.detail-page.darkmode .stat-label {
+     color: #eee;
 }
 
 .bar-bg {
      flex: 1;
-     background: #eee;
-     height: 12px;
-     border-radius: 8px;
+     background: #f0f0f0;
+     height: 14px;
+     border-radius: 10px;
      overflow: hidden;
+     border: 1px solid #ccc;
 }
 
 .bar-fill {
      height: 100%;
      background: linear-gradient(90deg, #facc15, #f97316);
-     border-radius: 8px 0 0 8px;
+     border-radius: 10px 0 0 10px;
+     transition: width 0.3s ease;
 }
 
 .stat-value {
      min-width: 40px;
      text-align: right;
-     font-weight: 600;
+     font-weight: 700;
+     color: #555;
 }
-
-button {
-     display: block;
-     margin: 2rem auto 0;
-     padding: 0.75rem 1.5rem;
-     background-color: #2563eb;
-     color: white;
-     font-size: 1rem;
-     border: none;
-     border-radius: 10px;
-     cursor: pointer;
-     transition: background-color 0.2s ease;
+.detail-page.darkmode .stat-value {
+     color: #eee;
 }
-
-button:hover {
-     background-color: #1e40af;
-}
-
-button.dark {
-     background-color: #475569;
-}
-
-button.dark:hover {
-     background-color: #334155;
-} */

@@ -1,12 +1,18 @@
 import "../styles/Card.css";
 import { useContext } from "react";
 import { ThemeToggleBtnContext } from "../Context/ThemeToggleBtn";
+import { useNavigate } from "react-router-dom";
 
 function Card({ id, name, image, types }) {
      const { isDark } = useContext(ThemeToggleBtnContext);
+     const navigate = useNavigate();
 
      return (
-          <div className={`card card-${isDark}`}>
+          <div
+               onClick={() => navigate(`/detail/${id}`)}
+               className={`card card-${isDark}`}
+               style={{ cursor: "pointer" }}
+          >
                <p className="poke_id">No.{id}</p>
                <p>{name}</p>
                <img src={image} />

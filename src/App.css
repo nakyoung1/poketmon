@@ -5,17 +5,16 @@
 }
 .wrapper {
      background-image: none;
-     padding-top: 20px;
 }
 
 .wrapper.theme-light {
-     min-height: 55vh;
+     min-height: 100vh;
      padding-bottom: 30px;
      height: auto;
      background-color: #eee;
 }
 .wrapper.theme-dark {
-     min-height: 55vh;
+     min-height: 100vh;
      padding-bottom: 30px;
      height: auto;
      background-color: #0e1621;
@@ -28,4 +27,8 @@
      100% {
           transform: rotate(360deg);
      }
+}
+a {
+     text-decoration: none !important;
+     color: inherit !important;
 }

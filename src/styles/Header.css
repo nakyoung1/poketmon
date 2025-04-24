@@ -2,7 +2,7 @@ header {
      position: relative;
      z-index: 1;
      overflow: hidden;
-     width: 100vw;
+     width: 100%;
      height: auto;
      background-image: url("../assets/header_back.png");
      background-size: cover;
@@ -11,9 +11,7 @@ header {
      display: flex;
      flex-direction: column;
      justify-content: start;
-
      align-items: center;
-     padding: 20px;
 }
 
 header::after {
@@ -35,9 +33,12 @@ header.darkMode::after {
 
 .utility {
      width: 100%;
+     padding: 0 20px;
+     padding-top: 30px;
      display: flex;
      justify-content: space-between;
      z-index: 29;
+     background-color: transparent;
 }
 
 .lang-toggle {
@@ -64,8 +65,8 @@ header.darkMode::after {
 }
 
 .toggle-btn {
-     width: 30px;
-     height: 30px;
+     width: 35px;
+     height: 35px;
      border-radius: 50%;
      border: none;
      cursor: pointer;
@@ -76,7 +77,7 @@ header.darkMode::after {
      z-index: 30;
 }
 .toggle-btn:hover {
-     border: 1px solid rgba(164, 164, 164, 0.4);
+     transform: translateY(-1px);
 }
 
 .toggle-btn.light {
@@ -137,4 +138,51 @@ header.darkMode::after {
      .title_img {
           width: 40%;
      }
+}
+.userInfo {
+     display: flex;
+     gap: 10px;
+}
+.userInfo img {
+     width: 35px;
+}
+.userInfo img:hover {
+     transform: translateY(-1px);
+}
+.greetUser {
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 1rem;
+     font-family: "Arial Rounded MT", "Segoe UI", sans-serif;
+     margin: 0;
+     font-weight: bold;
+     font-size: 1rem;
+     background-color: #ffe86f;
+     padding: 0.3rem 0.7rem;
+     border-radius: 0.5rem;
+     border: 1px solid #ef5350;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.greetUser p {
+     margin: 0;
+     font-weight: bold;
+     color: #2c2c2c;
+     font-size: 1rem;
+}
+
+.greetUser button {
+     padding: 0.4rem 0.9rem;
+     background: radial-gradient(circle at center, #ef5350, #d32f2f);
+     color: #fff;
+     border: none;
+     border-radius: 0.5rem;
+     cursor: pointer;
+     font-weight: bold;
+     transition: background-color 0.3s ease;
+}
+
+.greetUser button:hover {
+     background: radial-gradient(circle at center, #c62828, #ad1f1f);
 }

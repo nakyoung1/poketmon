@@ -4,44 +4,63 @@ import Header from "./Components/Header";
 import CardList from "./Components/CardList";
 import PokemonDialog from "./Components/PokemonDialog";
 import TopButton from "./Components/TobBtn";
+import DetailPage from "./Components/DetailPage";
+import Signup from "./Components/SignUp";
+import Login from "./Components/Login";
 
 import { PokeContextProvider } from "./Context/poke_context";
 import { LangToggleBtnProvider } from "./Context/LangToggleBtn";
+import { LoginStatetProvider } from "./Context/Login_context";
 
-import { useContext } from "react";
 import {
      ThemeToggleBtnContext,
      ThemeToggleBtnProvider,
 } from "./Context/ThemeToggleBtn";
-import Detail from "./Components/Detail";
 
-function Main({ children }) {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+
+function Main() {
      const { isDark } = useContext(ThemeToggleBtnContext);
      return (
           <div className={`wrapper theme-${isDark}`}>
+               <Header />
                <main>
-                    {children}
                     <CardList />
                </main>
+               <TopButton />
+               <PokemonDialog />
           </div>
      );
 }
 
 function App() {
      return (
-          <>
+          <LoginStatetProvider>
                <PokeContextProvider>
                     <LangToggleBtnProvider>
                          <ThemeToggleBtnProvider>
-                              <Header />
-                              <Main />
-                              <TopButton />
-                              <Detail />
-                              <PokemonDialog />
+                              <BrowserRouter>
+                                   <Routes>
+                                        <Route path="/" element={<Main />} />
+                                        <Route
+                                             path="/detail/:id"
+                                             element={<DetailPage />}
+                                        />
+                                        <Route
+                                             path="login"
+                                             element={<Login />}
+                                        />
+                                        <Route
+                                             path="signup"
+                                             element={<Signup />}
+                                        />
+                                   </Routes>
+                              </BrowserRouter>
                          </ThemeToggleBtnProvider>
                     </LangToggleBtnProvider>
                </PokeContextProvider>
-          </>
+          </LoginStatetProvider>
      );
 }
 

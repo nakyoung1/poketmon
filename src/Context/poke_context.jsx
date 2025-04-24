@@ -12,13 +12,18 @@ const initialState = {
 
 function pokeReducer(state, action) {
      switch (action.type) {
-          case "APPEND_POKEMON":
+          case "APPEND_POKEMON": {
+               const newAll = [...state.all, ...action.payload];
                return {
                     ...state,
-                    all: action.payload,
-                    displayed: action.payload.slice(0, 50),
-                    filtered: action.payload.slice(0, 50),
+                    all: newAll,
+                    displayed: newAll.slice(0, 50),
+                    filtered:
+                         state.filtered.length === state.displayed.length
+                              ? newAll.slice(0, 50)
+                              : state.filtered,
                };
+          }
           case "LOAD_MORE": {
                const next = state.all.slice(0, state.displayed.length + 50);
                return {
@@ -53,9 +58,9 @@ function pokeReducer(state, action) {
 
 export function PokeContextProvider({ children }) {
      const [state, dispatch] = useReducer(pokeReducer, initialState);
-     const [isModalOpen, setIsModalOpen] = useState(false);
      const [selectedPokemon, setSelectedPokemon] = useState(null);
      const [isLoading, setIsLoading] = useState(true);
+     const [isModalOpen, setIsModalOpen] = useState(false);
 
      const getPokemonData = async (id) => {
           try {
@@ -93,21 +98,21 @@ export function PokeContextProvider({ children }) {
           }
      };
 
-     const fetchInitialPokemon = async () => {
-          try {
-               const promises = Array.from({ length: 50 }, (_, i) =>
-                    getPokemonData(i + 1)
-               );
-               const result = await Promise.all(promises);
-               dispatch({
-                    type: "APPEND_POKEMON",
-                    payload: result.filter(Boolean),
-               });
-               setIsLoading(false);
-          } catch (error) {
-               console.error("초기 포켓몬 로딩 실패", error);
-          }
-     };
+     // const fetchInitialPokemon = async () => {
+     //      try {
+     //           const promises = Array.from({ length: 1025 }, (_, i) =>
+     //                getPokemonData(i + 1)
+     //           );
+     //           const result = await Promise.all(promises);
+     //           dispatch({
+     //                type: "APPEND_POKEMON",
+     //                payload: result.filter(Boolean),
+     //           });
+     //           setIsLoading(false);
+     //      } catch (error) {
+     //           console.error("전체 포켓몬 로딩 실패", error);
+     //      }
+     // };
 
      const fetchAllPokemon = async () => {
           try {
@@ -135,7 +140,7 @@ export function PokeContextProvider({ children }) {
      };
 
      useEffect(() => {
-          fetchInitialPokemon(); // 최초엔 50개만
+          fetchAllPokemon();
      }, []);
 
      return (
@@ -144,11 +149,11 @@ export function PokeContextProvider({ children }) {
                     state,
                     dispatch,
                     isLoading,
-                    isModalOpen,
-                    setIsModalOpen,
                     selectedPokemon,
                     setSelectedPokemon,
-                    searchWithAutoFetch, // 검색용 커스텀 핸들러 추가
+                    searchWithAutoFetch,
+                    setIsModalOpen,
+                    isModalOpen,
                }}
           >
                {children}

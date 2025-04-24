@@ -3,7 +3,6 @@ import { useContext, useRef } from "react";
 import { PokeContext } from "../Context/poke_context";
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import confetti from "canvas-confetti";
-
 function Search() {
      const {
           dispatch,
@@ -16,6 +15,7 @@ function Search() {
      const { lang } = useContext(LangToggleBtnContext);
      const inputRef = useRef(null);
      const btnRef = useRef(null);
+
      function handleReset() {
           dispatch({ type: "RESET" });
      }
@@ -45,7 +45,6 @@ function Search() {
                setIsModalOpen(true);
           }, 800);
      };
-
      return (
           <div className="search-bar">
                <div className="search-left">
