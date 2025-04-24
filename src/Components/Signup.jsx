@@ -48,7 +48,14 @@ function Signup() {
                     displayName: nickname,
                });
                console.log("회원가입 성공", userCredential.user);
-               navigate("/login");
+               if (lang === "kor") {
+                    alert("회원가입 완료!");
+                    navigate("/login");
+                    return;
+               } else {
+                    alert("Registration successful!");
+                    navigate("/login");
+               }
           } catch (error) {
                console.log("회원가입 오류", error.message);
           }
