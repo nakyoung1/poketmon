@@ -5,7 +5,7 @@ import CardList from "./Components/CardList";
 import PokemonDialog from "./Components/PokemonDialog";
 import TopButton from "./Components/TobBtn";
 import DetailPage from "./Components/DetailPage";
-import Signup from "./Components/SignUp";
+import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 
 import { PokeContextProvider } from "./Context/poke_context";
