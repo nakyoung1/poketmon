@@ -16,7 +16,7 @@ function Login() {
      const { lang } = useContext(LangToggleBtnContext);
      const { isDark } = useContext(ThemeToggleBtnContext);
      const { setLoginState } = useContext(LoginStateContext);
-     let nevigate = useNavigate();
+     let navigate = useNavigate();
 
      const handleSubmit = async (e) => {
           e.preventDefault();
@@ -28,7 +28,7 @@ function Login() {
                );
                console.log("로그인 성공", userCredential.user);
                setLoginState(true);
-               nevigate("/");
+               navigate("/");
           } catch (error) {
                console.log("로그인 오류", error.message);
                alert("이메일이나 비밀번호가 맞지 않습니다.");
@@ -46,7 +46,7 @@ function Login() {
                     <img
                          className="title_img"
                          src={logo}
-                         onClick={() => nevigate("/")}
+                         onClick={() => navigate("/")}
                     />
                     <form onSubmit={handleSubmit} className="login-form">
                          <label htmlFor="email">
@@ -86,7 +86,7 @@ function Login() {
 
                               <button
                                    type="button"
-                                   onClick={() => nevigate("/signup")}
+                                   onClick={() => navigate("/signup")}
                               >
                                    {lang === "kor" ? "회원가입" : "Signup"}
                               </button>

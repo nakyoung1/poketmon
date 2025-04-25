@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PokeContext } from "../Context/poke_context";
 import { LangToggleBtnContext } from "../Context/LangToggleBtn";
 import { TYPE_NAME_KR, STAT_NAME_KR } from "../data/Translation";
@@ -9,8 +9,11 @@ import "../styles/DetailPage.css";
 import Loading from "./Loading";
 import Utility from "./Utility";
 import Comment from "./Comment";
-
+import logo from "../assets/header_logo.png";
 function DetailPage() {
+     useEffect(() => {
+          window.scrollTo(0, 0);
+     }, []);
      const { id } = useParams();
      const { state, isLoading } = useContext(PokeContext);
      const { isDark } = useContext(ThemeToggleBtnContext);
@@ -22,7 +25,8 @@ function DetailPage() {
 
      return (
           <div className={`detail-page ${isDark === "dark" ? "darkmode" : ""}`}>
-               <Utility />{" "}
+               <Utility />
+
                <div className={`pokemon-detail`}>
                     <button onClick={() => navigate(`/`)} className="backBtn">
                          back
