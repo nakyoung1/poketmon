@@ -44,7 +44,7 @@ header.darkMode::after {
 .lang-toggle {
      background-color: #ffcb05; /* 포켓몬 노랑 */
      border: 2px solid #3d7dca; /* 포켓몬 파랑 */
-     color: rgb(31, 60, 132); /* 진파랑 텍스트 */
+     color: #2a75bb;
      font-weight: bold;
      padding: 8px 16px;
      border-radius: 9999px;
@@ -55,7 +55,7 @@ header.darkMode::after {
 }
 
 .lang-toggle:hover {
-     background-color: #ffe44d; /* 밝은 노랑 */
+     background-color: #ffe44d;
      transform: translateY(-1px);
 }
 

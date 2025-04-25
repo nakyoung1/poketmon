@@ -44,11 +44,7 @@
 
 /* 전체보기 텍스트 */
 .search-left .all {
-     background: linear-gradient(
-          145deg,
-          #ffcc01,
-          #ffdf70
-     ); /* 포켓몬스러운 노랑 */
+     background-color: #ffcb05;
      color: #2a75bb;
      font-weight: bold;
      cursor: pointer;
@@ -56,12 +52,12 @@
      border-radius: 25px;
      padding: 10px 16px;
      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-     border: 2px solid #f4b400;
+     border: 2px solid #3d7dca; /* 연파랑 */
      transition: all 0.2s ease-in-out;
 }
 
 .search-left .all:hover {
-     background: linear-gradient(145deg, #ffe670, #ffd000);
+     background-color: #ffe44d;
      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
      transform: translateY(-2px);
 }
