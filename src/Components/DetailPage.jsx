@@ -26,7 +26,11 @@ function DetailPage() {
      return (
           <div className={`detail-page ${isDark === "dark" ? "darkmode" : ""}`}>
                <Utility />
-
+               <img
+                    className="title_img"
+                    src={logo}
+                    onClick={() => navigate("/")}
+               />
                <div className={`pokemon-detail`}>
                     <button onClick={() => navigate(`/`)} className="backBtn">
                          back
